@@ -6,7 +6,7 @@ try :
 
 
     # Set the login credentials and submit button
-    # tbUser=F&tbPass=F&Button2=%D8%AF%D8%AE%D9%88%D9%84
+    # tbUser=username&tbPass=password&Button2=%D8%AF%D8%AE%D9%88%D9%84
 
     username = 'YOUR USERNAME'
     password = 'YOUR PASSWORD'
@@ -93,5 +93,7 @@ try :
         payload.update({names[i] : [1]})
 
     r = s.post(url, data=payload, cookies=cookies, verify=False)
+    
+    s.close()
 except Exception as e:
     print('[' + '\033[35m E \033[0m' + '] ' + str(e))
